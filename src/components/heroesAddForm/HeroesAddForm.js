@@ -19,7 +19,7 @@ import * as Yup from "yup";
 import { v4 as uuidv4 } from "uuid";
 
 import { useHttp } from "../../hooks/http.hook";
-import { heroUploaded } from "../../actions";
+import { heroUploaded } from "../heroesList/heroesSlice";
 
 import "./heroerAddForm.scss";
 
