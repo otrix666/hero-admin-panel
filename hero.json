@@ -7,12 +7,6 @@
       "element": "fire"
     },
     {
-      "id": "884a590a-a705-437b-8172-79874c48dc79",
-      "name": "123123",
-      "description": "123123",
-      "element": "fire"
-    },
-    {
       "id": "b4e8b949-a7f7-4942-a8ee-a0f0ee6ce021",
       "name": "tdlib",
       "description": "123sadsd",
@@ -23,6 +17,12 @@
       "name": "HunterDisc",
       "description": "sdacxzc",
       "element": "water"
+    },
+    {
+      "id": "8634bb0f-750a-49c3-9768-bd80112e4e95",
+      "name": "HunterDiscEr",
+      "description": "asdzxc",
+      "element": "earth"
     }
   ],
   "filters": [
