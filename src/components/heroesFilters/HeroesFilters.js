@@ -4,6 +4,10 @@ import classNames from "classnames";
 
 import { fetchFilters } from "../heroesFilters/heroesFiltersSlice";
 import { activeFilterChanged } from "../heroesFilters/heroesFiltersSlice";
+import { selectAll } from "./heroesFiltersSlice";
+
+import store from "../../store";
+
 import Spinner from "../spinner/Spinner";
 
 // Задача для этого компонента:
@@ -12,9 +16,11 @@ import Spinner from "../spinner/Spinner";
 // Активный фильтр имеет класс active
 
 const HeroesFilters = () => {
-  const { filters, filtersLoadingStatus, activeFilter } = useSelector(
+  const { filtersLoadingStatus, activeFilter } = useSelector(
     (state) => state.filters
   );
+  const filters = selectAll(store.getState());
+
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -20,11 +20,14 @@ import { v4 as uuidv4 } from "uuid";
 
 import { useHttp } from "../../hooks/http.hook";
 import { heroUploaded } from "../heroesList/heroesSlice";
+import { selectAll } from "../heroesFilters/heroesFiltersSlice";
+import store from "../../store";
 
 import "./heroerAddForm.scss";
 
 const HeroesAddForm = () => {
-  const { filters, filtersLoadingStatus } = useSelector((state) => state.filters);
+  const filters = selectAll(store.getState());
+  const { filtersLoadingStatus } = useSelector((state) => state.filters);
   const { request } = useHttp();
   const dispatch = useDispatch();
 

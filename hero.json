@@ -11,42 +11,35 @@
       "name": "tdlib",
       "description": "123sadsd",
       "element": "wind"
-    },
-    {
-      "id": "2ce18aaf-8913-493e-b2a7-102c4eaddf8d",
-      "name": "HunterDisc",
-      "description": "sdacxzc",
-      "element": "water"
-    },
-    {
-      "id": "8634bb0f-750a-49c3-9768-bd80112e4e95",
-      "name": "HunterDiscEr",
-      "description": "asdzxc",
-      "element": "earth"
     }
   ],
   "filters": [
     {
+      "id": 1,
       "filterValue": "all",
       "filterName": "Все",
       "filterClass": "btn-outline-dark"
     },
     {
+      "id": 2,
       "filterValue": "fire",
       "filterName": "Огонь",
       "filterClass": "btn-danger"
     },
     {
+      "id": 3,
       "filterValue": "water",
       "filterName": "Вода",
       "filterClass": "btn-primary"
     },
     {
+      "id": 4,
       "filterValue": "wind",
       "filterName": "Воздух",
       "filterClass": "btn-success"
     },
     {
+      "id": 5,
       "filterValue": "earth",
       "filterName": "Земля",
       "filterClass": "btn-secondary"
