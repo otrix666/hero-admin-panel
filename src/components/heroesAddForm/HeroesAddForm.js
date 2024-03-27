@@ -8,7 +8,8 @@
 // Элементы <option></option> желательно сформировать на базе
 // данных из фильтров
 
-import { useDispatch, useSelector } from "react-redux";
+
+import { useSelector } from "react-redux";
 import {
   Formik,
   Form,
@@ -18,24 +19,21 @@ import {
 import * as Yup from "yup";
 import { v4 as uuidv4 } from "uuid";
 
-import { useHttp } from "../../hooks/http.hook";
-import { heroUploaded } from "../heroesList/heroesSlice";
 import { selectAll } from "../heroesFilters/heroesFiltersSlice";
+
+import { useCreateHeroMutation } from "../../api/apiSlice";
+
 import store from "../../store";
 
 import "./heroerAddForm.scss";
 
 const HeroesAddForm = () => {
+
+  const [createHero] = useCreateHeroMutation();
+
   const filters = selectAll(store.getState());
   const { filtersLoadingStatus } = useSelector((state) => state.filters);
-  const { request } = useHttp();
-  const dispatch = useDispatch();
-
-  const uploadNewHero = (json) => {
-    request("http://localhost:3001/heroes", "POST", json).then((data) =>
-      dispatch(heroUploaded(data))
-    );
-  };
+  
 
   const renderFilters = (filters, status) => {
     if (status === "loading") {
@@ -76,8 +74,7 @@ const HeroesAddForm = () => {
       })}
       onSubmit={(values, { resetForm }) => {
         values = { id: `${uuidv4()}`, ...values };
-        const json = JSON.stringify(values);
-        uploadNewHero(json);
+        createHero(values).unwrap();
         resetForm();
       }}
     >

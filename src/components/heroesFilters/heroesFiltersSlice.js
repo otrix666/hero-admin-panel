@@ -12,8 +12,6 @@ const initialState = filtersAdapter.getInitialState({
   activeFilter: "all",
 });
 
-// console.log(initialState);
-
 export const fetchFilters = createAsyncThunk("filters/fetchFilters", () => {
   const { request } = useHttp();
   return request("http://localhost:3001/filters");
@@ -34,7 +32,7 @@ const heroesFiltersSlice = createSlice({
       })
       .addCase(fetchFilters.fulfilled, (state, action) => {
         state.filtersLoadingStatus = "idle";
-        console.log(action.payload);
+        
         filtersAdapter.setAll(state, action.payload);
       })
       .addCase(fetchFilters.rejected, (state) => {
